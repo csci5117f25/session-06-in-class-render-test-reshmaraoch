@@ -10,9 +10,31 @@
 </head>
 <body>
     
-<h1>Hello from Render</h1>
+<!-- <h1>Hello from Render</h1>
 {% if name %}
-<h2>and hello to {{name}}</h2>
-{% endif %}
+<h2>and Hello to {{name}}</h2>
+{% endif %} -->
+
+{% extends "base.html" %}
+
+{% block content %}
+  <!-- Guest Form -->
+  <form method="POST">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" required><br><br>
+
+      <label for="message">Message:</label>
+      <input type="text" name="message" id="message" required><br><br>
+
+      <button type="submit">Add Guest</button>
+  </form>
+
+  <h2>Guest Entries</h2>
+  <ol>
+      {% for guest in guest_list %}
+          <li><strong>{{ guest.name }}</strong>: {{ guest.message }}</li>
+      {% endfor %}
+  </ol>
+{% endblock %}
 </body>
 </html>
