@@ -11,7 +11,7 @@ import os
 
 from flask import current_app, g
 
-import psycopg2
+#import psycopg2
 from psycopg2.pool import ThreadedConnectionPool
 from psycopg2.extras import DictCursor
 
@@ -51,7 +51,7 @@ def add_post(name, message):
     with get_db_cursor(True) as cur:
         # current_app.logger.info("Adding guestbook post %s, %s", name, message)
         cur.execute(
-            "INSERT INTO Guest_Book (Name, Message) values (%s, %s);",
+            "INSERT INTO GuestBook (Name, Message) values (%s, %s);",
             (name, message),
         )
 
@@ -60,7 +60,7 @@ def get_guestbook():
     retval = []
     with get_db_cursor(False) as cur:
         with get_db_cursor() as cur:
-            cur.execute("select * from guest_book_entries")
+            cur.execute("select * from GuestBook")
             for row in cur:
                 retval.append({"name": row["name"], "message": row["message"]})
     return retval

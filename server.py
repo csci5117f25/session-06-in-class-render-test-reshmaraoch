@@ -6,7 +6,7 @@ db.setup()
 
 @app.route("/")
 @app.route("/<name>")
-def hello(name):
+def hello(name=None):
     return render_template("hello.html", name=name, guestbook=db.get_guestbook())
 
 

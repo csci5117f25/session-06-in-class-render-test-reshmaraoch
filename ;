@@ -1,0 +1,15 @@
+Made chnages to fetch and print the guest book entires
+
+# the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	new file:   db.py
+#	modified:   schema.sql
+#	modified:   server.py
+#	deleted:    templates/base.html
+#	modified:   templates/hello.html
+#
