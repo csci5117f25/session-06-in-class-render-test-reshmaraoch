@@ -4,7 +4,8 @@ docs:
 * http://initd.org/psycopg/docs/pool.html
 * http://initd.org/psycopg/docs/extras.html#dictionary-like-cursor
 """
-
+from dotenv import load_dotenv
+load_dotenv()
 from contextlib import contextmanager
 import logging
 import os
